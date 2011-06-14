@@ -3,17 +3,15 @@
 #include <libnotify/notify.h>
 #include <stdlib.h>
 
-int main ()
+int main (int argc, char *argv[])
 {
     time_t rawtime;
     struct tm *timeinfo;
-    int year, month ,day;
 
     time (&rawtime);
     timeinfo = localtime(&rawtime);
-    mktime (timeinfo);
+    mktime(timeinfo);
 
-    printf ("That day is a %s.\n", weekday[timeinfo->tm_wday]);
     printf ("That min is a %i.\n", timeinfo->tm_min);
 
     char buffer[10];
